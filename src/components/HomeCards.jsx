@@ -22,7 +22,7 @@ const HomeCards = () => {
             </p>
             <a
               href="/add-job.html"
-              className="inline-block bg-amber-400 hover:bg-amber-300 text-white rounded-lg px-4 py-2 hover:bg-indigo-600"
+              className="inline-block bg-amber-400 hover:bg-amber-300 text-white rounded-lg px-4 py-2"
             >
               Add Movie
             </a>
