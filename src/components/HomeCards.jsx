@@ -1,11 +1,12 @@
 import React from 'react';
+import Card from './Card';
 
 const HomeCards = () => {
   return (
     <section className="bg-black py-4">
       <div className="container-xl lg:container m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <Card>
             <h2 className="text-2xl font-bold">For Viewers</h2>
             <p className="mt-2 mb-4">Browse and discover movies you’ll love.</p>
             <a
@@ -14,8 +15,8 @@ const HomeCards = () => {
             >
               Browse Movies
             </a>
-          </div>
-          <div className="bg-amber-100 p-6 rounded-lg shadow-md">
+          </Card>
+          <Card bg="bg-amber-100">
             <h2 className="text-2xl font-bold">For Creators</h2>
             <p className="mt-2 mb-4">
               Add and share your films with the world.
@@ -26,7 +27,7 @@ const HomeCards = () => {
             >
               Add Movie
             </a>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
