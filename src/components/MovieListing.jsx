@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
 const MovieListing = ({ movie }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -28,7 +29,10 @@ const MovieListing = ({ movie }) => {
         <div className="border border-gray-100 mb-5">{movie.director}</div>
 
         <div className="flex flex-col lg:flex-row justify-between mb-4">
-          <div className="text-orange-700 mb-3">{movie.rating}</div>
+          <div className="flex flex-row items-center">
+            <FaStar className="text-amber-400" />
+            <div className="text-orange-700 ml-2">{movie.rating}</div>
+          </div>
           <a
             href="job.html"
             className="h-[36px] bg-amber-400 hover:bg-amber-300 text-white px-4 py-2 rounded-lg text-center text-sm"

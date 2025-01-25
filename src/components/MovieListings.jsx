@@ -2,8 +2,8 @@ import React from 'react';
 import MovieListing from './MovieListing';
 import movies from '../movies.json';
 
-const MovieListings = () => {
-  const popularMovies = movies.slice(0, 3);
+const MovieListings = ({ isHome = false }) => {
+  const popularMovies = isHome ? movies.slice(0, 3) : movies;
   return (
     <section className="bg-black px-4 py-10">
       <div className="container-xl lg:container m-auto">

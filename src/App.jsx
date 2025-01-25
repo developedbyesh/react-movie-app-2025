@@ -1,18 +1,27 @@
 import React from 'react';
-import Hero from './components/Hero';
-import HomeCards from './components/HomeCards';
-import MovieListings from './components/MovieListings';
-import ViewAllMovies from './components/ViewAllMovies';
-import Navbar from './components/Navbar';
+// import {
+//   Route,
+//   createBrowserRouter,
+//   createRoutesFromElements,
+//   RouterProvider,
+// } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import AddMoviePage from './pages/AddMoviePage';
+import MainLayout from './layouts/MainLayout';
+import Movies from './pages/Movies';
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <HomeCards />
-      <MovieListings />
-      <ViewAllMovies />
+      <Router>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/movies" element={<Movies />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 };
