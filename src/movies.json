@@ -1,86 +1,88 @@
-[
-  {
-    "id": "1",
-    "title": "Inception",
-    "genre": "Sci-Fi",
-    "description": "Dom Cobb, a skilled thief, is the best in the dangerous art of extraction: stealing valuable secrets from deep within the subconscious during the dream state. Cobb's rare ability has made him a coveted player in industrial espionage but has also cost him everything he loves. Now, he is offered a chance at redemption, one final job that could give him his life back—but only if he can achieve the impossible: inception.",
-    "director": "Christopher Nolan",
-    "rating": "8.8",
-    "crew": {
-      "writer": "Christopher Nolan",
-      "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
-      "producer": "Emma Thomas, Christopher Nolan",
-      "music": "Hans Zimmer"
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Inception",
+      "genre": "Sci-Fi",
+      "description": "Dom Cobb, a skilled thief, is the best in the dangerous art of extraction: stealing valuable secrets from deep within the subconscious during the dream state. Cobb's rare ability has made him a coveted player in industrial espionage but has also cost him everything he loves. Now, he is offered a chance at redemption, one final job that could give him his life back—but only if he can achieve the impossible: inception.",
+      "director": "Christopher Nolan",
+      "rating": "8.8",
+      "crew": {
+        "writer": "Christopher Nolan",
+        "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
+        "producer": "Emma Thomas, Christopher Nolan",
+        "music": "Hans Zimmer"
+      }
+    },
+    {
+      "id": "2",
+      "title": "The Shawshank Redemption",
+      "genre": "Drama",
+      "description": "Wrongfully convicted of murder, Andy Dufresne is sentenced to life imprisonment at Shawshank prison. Over the years, he befriends a fellow inmate, Ellis 'Red' Redding, and becomes instrumental in a money-laundering operation led by the prison warden. Despite the hardships, Andy never loses hope and eventually plots a daring escape, leaving a lasting impression on those around him.",
+      "director": "Frank Darabont",
+      "rating": "9.3",
+      "crew": {
+        "writer": "Stephen King, Frank Darabont",
+        "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
+        "producer": "Niki Marvin",
+        "music": "Thomas Newman"
+      }
+    },
+    {
+      "id": "3",
+      "title": "The Godfather",
+      "genre": "Crime",
+      "description": "The Corleone family is an organized crime dynasty in post-war America. When the patriarch, Don Vito Corleone, passes control to his youngest son, Michael, the reluctant new leader is drawn into a world of power, betrayal, and revenge. As Michael transforms into a ruthless mafia boss, the line between loyalty and corruption blurs in this epic tale of family and ambition.",
+      "director": "Francis Ford Coppola",
+      "rating": "9.2",
+      "crew": {
+        "writer": "Mario Puzo, Francis Ford Coppola",
+        "cast": "Marlon Brando, Al Pacino, James Caan, Diane Keaton",
+        "producer": "Albert S. Ruddy",
+        "music": "Nino Rota"
+      }
+    },
+    {
+      "id": "4",
+      "title": "The Dark Knight",
+      "genre": "Action",
+      "description": "In Gotham City, Batman sets out to dismantle organized crime but faces a new challenge in the form of the Joker, a criminal mastermind who thrives on chaos and destruction. As the Joker pushes Gotham into anarchy, Batman must confront his own moral boundaries and make devastating sacrifices to protect the city.",
+      "director": "Christopher Nolan",
+      "rating": "9.0",
+      "crew": {
+        "writer": "Jonathan Nolan, Christopher Nolan",
+        "cast": "Christian Bale, Heath Ledger, Aaron Eckhart, Maggie Gyllenhaal",
+        "producer": "Emma Thomas, Charles Roven",
+        "music": "Hans Zimmer, James Newton Howard"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Pulp Fiction",
+      "genre": "Crime",
+      "description": "A series of interconnected stories unravel in the gritty underworld of Los Angeles. From two mob hitmen on a mission to retrieve a mysterious briefcase, to a boxer on the run after a double-cross, and a gangster's wife dancing dangerously close to trouble, the film weaves dark humor and brutal violence into a stylish and unforgettable tapestry.",
+      "director": "Quentin Tarantino",
+      "rating": "8.9",
+      "crew": {
+        "writer": "Quentin Tarantino",
+        "cast": "John Travolta, Uma Thurman, Samuel L. Jackson, Bruce Willis",
+        "producer": "Lawrence Bender",
+        "music": "Various Artists"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Forrest Gump",
+      "genre": "Drama",
+      "description": "Forrest Gump, a kind-hearted and simple man from Alabama, recounts his extraordinary life story. From running across the country to unwittingly influencing historical events, Forrest navigates his life with unwavering optimism. Despite his limited intellect, his unconditional love for his childhood friend Jenny and his resilience in the face of adversity make his journey both inspiring and unforgettable.",
+      "director": "Robert Zemeckis",
+      "rating": "8.8",
+      "crew": {
+        "writer": "Eric Roth, Winston Groom",
+        "cast": "Tom Hanks, Robin Wright, Gary Sinise, Sally Field",
+        "producer": "Wendy Finerman",
+        "music": "Alan Silvestri"
+      }
     }
-  },
-  {
-    "id": "2",
-    "title": "The Shawshank Redemption",
-    "genre": "Drama",
-    "description": "Wrongfully convicted of murder, Andy Dufresne is sentenced to life imprisonment at Shawshank prison. Over the years, he befriends a fellow inmate, Ellis 'Red' Redding, and becomes instrumental in a money-laundering operation led by the prison warden. Despite the hardships, Andy never loses hope and eventually plots a daring escape, leaving a lasting impression on those around him.",
-    "director": "Frank Darabont",
-    "rating": "9.3",
-    "crew": {
-      "writer": "Stephen King, Frank Darabont",
-      "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
-      "producer": "Niki Marvin",
-      "music": "Thomas Newman"
-    }
-  },
-  {
-    "id": "3",
-    "title": "The Godfather",
-    "genre": "Crime",
-    "description": "The Corleone family is an organized crime dynasty in post-war America. When the patriarch, Don Vito Corleone, passes control to his youngest son, Michael, the reluctant new leader is drawn into a world of power, betrayal, and revenge. As Michael transforms into a ruthless mafia boss, the line between loyalty and corruption blurs in this epic tale of family and ambition.",
-    "director": "Francis Ford Coppola",
-    "rating": "9.2",
-    "crew": {
-      "writer": "Mario Puzo, Francis Ford Coppola",
-      "cast": "Marlon Brando, Al Pacino, James Caan, Diane Keaton",
-      "producer": "Albert S. Ruddy",
-      "music": "Nino Rota"
-    }
-  },
-  {
-    "id": "4",
-    "title": "The Dark Knight",
-    "genre": "Action",
-    "description": "In Gotham City, Batman sets out to dismantle organized crime but faces a new challenge in the form of the Joker, a criminal mastermind who thrives on chaos and destruction. As the Joker pushes Gotham into anarchy, Batman must confront his own moral boundaries and make devastating sacrifices to protect the city.",
-    "director": "Christopher Nolan",
-    "rating": "9.0",
-    "crew": {
-      "writer": "Jonathan Nolan, Christopher Nolan",
-      "cast": "Christian Bale, Heath Ledger, Aaron Eckhart, Maggie Gyllenhaal",
-      "producer": "Emma Thomas, Charles Roven",
-      "music": "Hans Zimmer, James Newton Howard"
-    }
-  },
-  {
-    "id": "5",
-    "title": "Pulp Fiction",
-    "genre": "Crime",
-    "description": "A series of interconnected stories unravel in the gritty underworld of Los Angeles. From two mob hitmen on a mission to retrieve a mysterious briefcase, to a boxer on the run after a double-cross, and a gangster's wife dancing dangerously close to trouble, the film weaves dark humor and brutal violence into a stylish and unforgettable tapestry.",
-    "director": "Quentin Tarantino",
-    "rating": "8.9",
-    "crew": {
-      "writer": "Quentin Tarantino",
-      "cast": "John Travolta, Uma Thurman, Samuel L. Jackson, Bruce Willis",
-      "producer": "Lawrence Bender",
-      "music": "Various Artists"
-    }
-  },
-  {
-    "id": "6",
-    "title": "Forrest Gump",
-    "genre": "Drama",
-    "description": "Forrest Gump, a kind-hearted and simple man from Alabama, recounts his extraordinary life story. From running across the country to unwittingly influencing historical events, Forrest navigates his life with unwavering optimism. Despite his limited intellect, his unconditional love for his childhood friend Jenny and his resilience in the face of adversity make his journey both inspiring and unforgettable.",
-    "director": "Robert Zemeckis",
-    "rating": "8.8",
-    "crew": {
-      "writer": "Eric Roth, Winston Groom",
-      "cast": "Tom Hanks, Robin Wright, Gary Sinise, Sally Field",
-      "producer": "Wendy Finerman",
-      "music": "Alan Silvestri"
-    }
-  }
-]
+  ]
+}
