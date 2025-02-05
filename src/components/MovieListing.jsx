@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MovieListing = ({ movie }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -33,12 +34,12 @@ const MovieListing = ({ movie }) => {
             <FaStar className="text-amber-400" />
             <div className="text-orange-700 ml-2">{movie.rating}</div>
           </div>
-          <a
-            href="job.html"
+          <Link
+            to={`/movies/${movie.id}`}
             className="h-[36px] bg-amber-400 hover:bg-amber-300 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>

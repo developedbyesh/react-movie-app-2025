@@ -10,6 +10,7 @@ import Homepage from './pages/Homepage';
 import AddMoviePage from './pages/AddMoviePage';
 import MainLayout from './layouts/MainLayout';
 import Movies from './pages/Movies';
+import Movie from './pages/Movie';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route element={<MainLayout />}>
             <Route path="/" element={<Homepage />} />
             <Route path="/movies" element={<Movies />} />
+            <Route path="/movies/:id" element={<Movie />} />
           </Route>
         </Routes>
       </Router>
