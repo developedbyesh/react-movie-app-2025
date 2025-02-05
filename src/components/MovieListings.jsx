@@ -9,8 +9,9 @@ const MovieListings = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchMovies = async () => {
+      const apiUrl = isHome ? '/api/movies?_limit=3' : '/api/movies';
       try {
-        const res = await fetch('http://localhost:5000/movies');
+        const res = await fetch(apiUrl);
         const data = await res.json();
         console.log('movies api', data);
         setMovies(data);
