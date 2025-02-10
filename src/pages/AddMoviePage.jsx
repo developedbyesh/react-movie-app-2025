@@ -1,47 +1,70 @@
 import React from 'react';
+import { useState } from 'react';
 
 const AddMoviePage = () => {
+  const [title, setTitle] = useState('');
+  const [genre, setGenre] = useState('Drama');
+  const [description, setDescription] = useState('');
+  const [director, setDirector] = useState('');
+  const [rating, setRating] = useState('10');
+  const [writer, setWriter] = useState('');
+  const [cast, setCast] = useState('');
+  const [producer, setProducer] = useState('');
+  const [music, setMusic] = useState('');
+
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    console.log(title);
+  };
+
   return (
     <>
       <section className="bg-indigo-50">
         <div className="container m-auto max-w-2xl py-24">
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
-            <form>
+            <form onSubmit={submitForm}>
               <h2 className="text-3xl text-center font-semibold mb-6">
                 Add Movie
               </h2>
 
               <div className="mb-4">
                 <label
-                  htmlFor="type"
+                  htmlFor="genre"
                   className="block text-gray-700 font-bold mb-2"
                 >
-                  Job Type
+                  Genre
                 </label>
                 <select
-                  id="type"
-                  name="type"
+                  id="genre"
+                  name="genre"
                   className="border rounded w-full py-2 px-3"
                   required
+                  value={genre}
+                  onChange={(e) => setGenre(e.target.value)}
                 >
-                  <option value="Full-Time">Full-Time</option>
-                  <option value="Part-Time">Part-Time</option>
-                  <option value="Remote">Remote</option>
-                  <option value="Internship">Internship</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Sci-Fi">Sci-Fi</option>
+                  <option value="Crime">Crime</option>
+                  <option value="Action">Action</option>
+                  <option value="Horror">Horror</option>
+                  <option value="Comedy">Comedy</option>
                 </select>
               </div>
 
               <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">
-                  Job Listing Name
+                  Movie Title
                 </label>
                 <input
                   type="text"
                   id="title"
                   name="title"
                   className="border rounded w-full py-2 px-3 mb-2"
-                  placeholder="eg. Beautiful Apartment In Miami"
+                  placeholder="Enter movie title"
                   required
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
                 />
               </div>
               <div className="mb-4">
@@ -56,114 +79,127 @@ const AddMoviePage = () => {
                   name="description"
                   className="border rounded w-full py-2 px-3"
                   rows="4"
-                  placeholder="Add any job duties, expectations, requirements, etc"
+                  placeholder="Enter movie description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </div>
 
               <div className="mb-4">
                 <label
-                  htmlFor="type"
+                  htmlFor="rating"
                   className="block text-gray-700 font-bold mb-2"
                 >
-                  Salary
+                  Rating
                 </label>
                 <select
-                  id="salary"
-                  name="salary"
+                  id="rating"
+                  name="rating"
                   className="border rounded w-full py-2 px-3"
                   required
+                  value={rating}
+                  onChange={(e) => setRating(e.target.value)}
                 >
-                  <option value="Under $50K">Under $50K</option>
-                  <option value="$50K - 60K">$50K - $60K</option>
-                  <option value="$60K - 70K">$60K - $70K</option>
-                  <option value="$70K - 80K">$70K - $80K</option>
-                  <option value="$80K - 90K">$80K - $90K</option>
-                  <option value="$90K - 100K">$90K - $100K</option>
-                  <option value="$100K - 125K">$100K - $125K</option>
-                  <option value="$125K - 150K">$125K - $150K</option>
-                  <option value="$150K - 175K">$150K - $175K</option>
-                  <option value="$175K - 200K">$175K - $200K</option>
-                  <option value="Over $200K">Over $200K</option>
+                  <option value="10">10</option>
+                  <option value="9">9</option>
+                  <option value="8">8</option>
+                  <option value="7">7</option>
+                  <option value="6">6</option>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
                 </select>
               </div>
 
               <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">
-                  Location
+                  Director
                 </label>
                 <input
                   type="text"
-                  id="location"
-                  name="location"
+                  id="director"
+                  name="director"
                   className="border rounded w-full py-2 px-3 mb-2"
-                  placeholder="Company Location"
+                  placeholder="Enter Director's Name"
                   required
+                  value={director}
+                  onChange={(e) => setDirector(e.target.value)}
                 />
               </div>
 
-              <h3 className="text-2xl mb-5">Company Info</h3>
+              <h3 className="text-2xl mb-5">Movie Info</h3>
 
               <div className="mb-4">
                 <label
-                  htmlFor="company"
+                  htmlFor="writer"
                   className="block text-gray-700 font-bold mb-2"
                 >
-                  Company Name
+                  Writer
                 </label>
                 <input
                   type="text"
-                  id="company"
-                  name="company"
+                  id="writer"
+                  name="writer"
                   className="border rounded w-full py-2 px-3"
-                  placeholder="Company Name"
+                  placeholder="Enter Writer's Name"
+                  value={writer}
+                  onChange={(e) => setWriter(e.target.value)}
                 />
               </div>
 
               <div className="mb-4">
                 <label
-                  htmlFor="company_description"
+                  htmlFor="cast"
                   className="block text-gray-700 font-bold mb-2"
                 >
-                  Company Description
+                  Cast
                 </label>
                 <textarea
-                  id="company_description"
-                  name="company_description"
+                  id="cast"
+                  name="cast"
                   className="border rounded w-full py-2 px-3"
                   rows="4"
-                  placeholder="What does your company do?"
+                  placeholder="Enter main cast details"
+                  value={cast}
+                  onChange={(e) => setCast(e.target.value)}
                 ></textarea>
               </div>
 
               <div className="mb-4">
                 <label
-                  htmlFor="contact_email"
+                  htmlFor="producer"
                   className="block text-gray-700 font-bold mb-2"
                 >
-                  Contact Email
+                  Producer
                 </label>
                 <input
-                  type="email"
-                  id="contact_email"
-                  name="contact_email"
+                  type="text"
+                  id="producer"
+                  name="producer"
                   className="border rounded w-full py-2 px-3"
-                  placeholder="Email address for applicants"
+                  placeholder="Enter producer's name"
                   required
+                  value={producer}
+                  onChange={(e) => setProducer(e.target.value)}
                 />
               </div>
               <div className="mb-4">
                 <label
-                  htmlFor="contact_phone"
+                  htmlFor="music"
                   className="block text-gray-700 font-bold mb-2"
                 >
-                  Contact Phone
+                  Music
                 </label>
                 <input
-                  type="tel"
-                  id="contact_phone"
-                  name="contact_phone"
+                  type="text"
+                  id="music"
+                  name="music"
                   className="border rounded w-full py-2 px-3"
-                  placeholder="Optional phone for applicants"
+                  placeholder="Enter Musician's name"
+                  value={music}
+                  onChange={(e) => setMusic(e.target.value)}
                 />
               </div>
 
@@ -172,7 +208,7 @@ const AddMoviePage = () => {
                   className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
-                  Add Job
+                  Add Movie
                 </button>
               </div>
             </form>
