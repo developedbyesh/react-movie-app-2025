@@ -1,34 +1,37 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { FaStar } from 'react-icons/fa';
+// import { useState, useEffect } from 'react';
+import { Link, useParams, useLoaderData } from 'react-router-dom';
+import { FaStar, FaArrowLeft } from 'react-icons/fa';
 import Spinner from '../components/Spinner';
 
 const Movie = () => {
   const { id } = useParams();
-  const [movie, setMovie] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const movie = useLoaderData();
+  // const [movie, setMovie] = useState(null);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchMovie = async () => {
-      try {
-        setLoading(true);
-        const res = await fetch(`/api/movies/${id}`);
-        const data = await res.json();
-        console.log('single movie data', data);
-        setMovie(data);
-        // console.log('movie data', movie);
-      } catch (error) {
-        console.log('single movie fetch error', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchMovie();
-  }, []);
-  return loading ? (
-    <Spinner loading={loading} />
-  ) : (
+  // useEffect(() => {
+  //   const fetchMovie = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const res = await fetch(`/api/movies/${id}`);
+  //       const data = await res.json();
+  //       console.log('single movie data', data);
+  //       setMovie(data);
+  //       // console.log('movie data', movie);
+  //     } catch (error) {
+  //       console.log('single movie fetch error', error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchMovie();
+  // }, []);
+
+  // loading ? (
+  //   <Spinner loading={loading} />
+  // ) :
+  return (
     <>
       <section>
         <div className="container m-auto py-6 px-6">
@@ -36,7 +39,8 @@ const Movie = () => {
             to="/movies"
             className="text-indigo-500 hover:text-indigo-600 flex items-center"
           >
-            <i className="fas fa-arrow-left mr-2"></i> Back to Job Listings
+            <FaArrowLeft className="mr-2" />
+            Back to Job Listings
           </Link>
         </div>
       </section>
@@ -119,4 +123,11 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+const movieLoader = async ({ params }) => {
+  const res = await fetch(`/api/movies/${params.id}`);
+  const data = await res.json();
+  console.log('movie loader data', data);
+  return data;
+};
+
+export { Movie as default, movieLoader };

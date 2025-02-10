@@ -24,12 +24,12 @@ const Navbar = () => {
                   <NavLink to="/movies" className={linkClass}>
                     Movies
                   </NavLink>
-                  <a
-                    href="/add-job.html"
+                  <NavLink
+                    to="/add-movie"
                     className="text-white hover:bg-amber-300 hover:text-white rounded-md px-3 py-2"
                   >
                     Add Movie
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>

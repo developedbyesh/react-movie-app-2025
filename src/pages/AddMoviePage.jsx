@@ -8,7 +8,7 @@ const AddMoviePage = () => {
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form>
               <h2 className="text-3xl text-center font-semibold mb-6">
-                Add Job
+                Add Movie
               </h2>
 
               <div className="mb-4">
