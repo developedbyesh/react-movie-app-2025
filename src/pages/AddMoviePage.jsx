@@ -1,7 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AddMoviePage = () => {
+const AddMoviePage = ({ addMovieSubmit }) => {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [genre, setGenre] = useState('Drama');
   const [description, setDescription] = useState('');
@@ -15,7 +18,22 @@ const AddMoviePage = () => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    console.log(title);
+    const newMovie = {
+      title,
+      genre,
+      description,
+      director,
+      rating,
+      crew: {
+        writer,
+        cast,
+        producer,
+        music,
+      },
+    };
+
+    addMovieSubmit(newMovie);
+    return navigate('/movies');
   };
 
   return (
