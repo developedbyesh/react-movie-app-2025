@@ -1,12 +1,13 @@
 import React from 'react';
 // import { useState, useEffect } from 'react';
-import { Link, useParams, useLoaderData } from 'react-router-dom';
+import { Link, useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { FaStar, FaArrowLeft } from 'react-icons/fa';
 import Spinner from '../components/Spinner';
 
-const Movie = () => {
+const Movie = ({ deleteMovie }) => {
   const { id } = useParams();
   const movie = useLoaderData();
+  const navigate = useNavigate();
   // const [movie, setMovie] = useState(null);
   // const [loading, setLoading] = useState(true);
 
@@ -31,6 +32,16 @@ const Movie = () => {
   // loading ? (
   //   <Spinner loading={loading} />
   // ) :
+  const onDeleteClick = (movieId) => {
+    const confirm = window.confirm(
+      'Are you sure you want to delete this listing?'
+    );
+
+    if (!confirm) return;
+
+    deleteMovie(movieId);
+    navigate('/movies');
+  };
   return (
     <>
       <section>
@@ -111,7 +122,10 @@ const Movie = () => {
                 >
                   Edit Movie
                 </a>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                <button
+                  onClick={() => onDeleteClick(movie.id)}
+                  className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                >
                   Delete Movie
                 </button>
               </div>
