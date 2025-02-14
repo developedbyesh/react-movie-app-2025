@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { FaStar, FaArrowLeft } from 'react-icons/fa';
 import Spinner from '../components/Spinner';
@@ -10,7 +10,7 @@ const Movie = ({ deleteMovie }) => {
   const movie = useLoaderData();
   const navigate = useNavigate();
   // const [movie, setMovie] = useState(null);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // useEffect(() => {
   //   const fetchMovie = async () => {
@@ -30,9 +30,6 @@ const Movie = ({ deleteMovie }) => {
   //   fetchMovie();
   // }, []);
 
-  // loading ? (
-  //   <Spinner loading={loading} />
-  // ) :
   const onDeleteClick = (movieId) => {
     const confirm = window.confirm(
       'Are you sure you want to delete this listing?'
@@ -44,6 +41,9 @@ const Movie = ({ deleteMovie }) => {
     toast.success('Movie deleted successfully!');
     navigate('/movies');
   };
+  // loading ? (
+  //   <Spinner loading={loading} />
+  // ) :
   return (
     <>
       <section>
