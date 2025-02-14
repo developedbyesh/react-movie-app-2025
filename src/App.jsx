@@ -11,6 +11,7 @@ import AddMoviePage from './pages/AddMoviePage';
 import MainLayout from './layouts/MainLayout';
 import Movies from './pages/Movies';
 import Movie, { movieLoader } from './pages/Movie';
+import EditMoviePage from './pages/EditMoviePage';
 
 const App = () => {
   // Add new Movie
@@ -33,6 +34,19 @@ const App = () => {
     });
     return;
   };
+
+  // Update Movie
+  const updateMovie = async (movie) => {
+    console.log('update', movie);
+    const res = await fetch(`/api/movies/${movie.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(movie),
+    });
+    return;
+  };
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
@@ -45,6 +59,11 @@ const App = () => {
         <Route
           path="/movies/:id"
           element={<Movie deleteMovie={deleteMovie} />}
+          loader={movieLoader}
+        />
+        <Route
+          path="/edit-movie/:id"
+          element={<EditMoviePage updateMovieSubmit={updateMovie} />}
           loader={movieLoader}
         />
       </Route>

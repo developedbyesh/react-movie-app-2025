@@ -1,25 +1,28 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const AddMoviePage = ({ addMovieSubmit }) => {
+const EditMoviePage = ({ updateMovieSubmit }) => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const movie = useLoaderData();
 
-  const [title, setTitle] = useState('');
-  const [genre, setGenre] = useState('Drama');
-  const [description, setDescription] = useState('');
-  const [director, setDirector] = useState('');
-  const [rating, setRating] = useState('10');
-  const [writer, setWriter] = useState('');
-  const [cast, setCast] = useState('');
-  const [producer, setProducer] = useState('');
-  const [music, setMusic] = useState('');
+  const [title, setTitle] = useState(movie.title);
+  const [genre, setGenre] = useState(movie.genre);
+  const [description, setDescription] = useState(movie.description);
+  const [director, setDirector] = useState(movie.director);
+  const [rating, setRating] = useState(movie.rating);
+  const [writer, setWriter] = useState(movie.crew.writer);
+  const [cast, setCast] = useState(movie.crew.cast);
+  const [producer, setProducer] = useState(movie.crew.producer);
+  const [music, setMusic] = useState(movie.crew.music);
 
   const submitForm = (e) => {
     e.preventDefault();
 
-    const newMovie = {
+    const updatedMovie = {
+      id,
       title,
       genre,
       description,
@@ -33,12 +36,11 @@ const AddMoviePage = ({ addMovieSubmit }) => {
       },
     };
 
-    addMovieSubmit(newMovie);
-    toast.success('Movie added successfully!');
+    updateMovieSubmit(updatedMovie);
+    toast.success('Movie updated successfully!');
 
-    return navigate('/movies');
+    return navigate(`/movies/${id}`);
   };
-
   return (
     <>
       <section className="bg-indigo-50">
@@ -46,7 +48,7 @@ const AddMoviePage = ({ addMovieSubmit }) => {
           <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
             <form onSubmit={submitForm}>
               <h2 className="text-3xl text-center font-semibold mb-6">
-                Add Movie
+                Update Movie
               </h2>
 
               <div className="mb-4">
@@ -229,7 +231,7 @@ const AddMoviePage = ({ addMovieSubmit }) => {
                   className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                   type="submit"
                 >
-                  Add Movie
+                  Update Movie
                 </button>
               </div>
             </form>
@@ -240,4 +242,4 @@ const AddMoviePage = ({ addMovieSubmit }) => {
   );
 };
 
-export default AddMoviePage;
+export default EditMoviePage;
